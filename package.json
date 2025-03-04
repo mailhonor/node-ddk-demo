@@ -1,0 +1,92 @@
+{
+  "name": "node-ddk-demo",
+  "version": "0.1.1",
+  "description": "桌面开发组件-演示",
+  "author": {
+    "name": "linuxmail",
+    "email": "eli960@qq.com",
+    "url": "http://linuxmail.cn/"
+  },
+  "main": "dist-electron/main.js",
+  "scripts": {
+    "dev": "(chcp 65001 || exit 0) && node scripts/dev.js",
+    "build": "node scripts/build.js"
+  },
+  "devDependencies": {
+    "@types/mousetrap": "^1.6.15",
+    "@types/node": "^22.5.2",
+    "asar": "^3.2.0",
+    "electron": "=22.3.4",
+    "electron-builder": "^25.1.8",
+    "fast-glob": "^3.3.2",
+    "js-web-screen-shot": "^1.9.9-rc.26",
+    "node-ddk": "^0.1.1",
+    "rollup-plugin-node-externals": "^7.1.3",
+    "typescript": "^5.3.3",
+    "vite": "^5.1.5",
+    "vite-plugin-electron": "^0.28.2",
+    "vite-plugin-electron-renderer": "^0.14.5",
+    "vite-plugin-node-polyfills": "^0.22.0"
+  },
+  "build": {
+    "appId": "node-ddk",
+    "productName": "node-ddk",
+    "copyright": "Copyright © 2025 linuxmail.cn",
+    "icon": "public/icons/favicon.png",
+    "directories": {
+      "output": "release/${version}"
+    },
+    "files": [
+      "dist/**",
+      "dist-electron/**"
+    ],
+    "extraFiles": [],
+    "asar": true,
+    "mac": {
+      "artifactName": "${productName}_${version}.${ext}",
+      "target": [
+        "dmg"
+      ]
+    },
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "artifactName": "${productName}_${version}.${ext}",
+      "icon": "public/icons/favicon.png"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "public/icons/favicon.png",
+      "mimeTypes": [
+        "text/plain"
+      ],
+      "category": "Network"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "deleteAppDataOnUninstall": false,
+      "allowElevation": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "桌面开发套件-开发"
+    },
+    "publish": [
+      {
+        "provider": "generic",
+        "url": "http://0:8080"
+      }
+    ],
+    "releaseInfo": {
+      "releaseNotes": "ELECTRON 桌面开发组件"
+    }
+  },
+  "homepage": "localhost:3000"
+}
