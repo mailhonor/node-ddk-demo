@@ -77,6 +77,8 @@ main.menu.setMenuByWindowType("menu_test123", [
 }
 // 托盘点击
 main.tray.setShowHideSwitchMainWindowOnClick()
+main.tray.setShowMainWindowOnClick()
+main.tray.setHideMainWindowOnClick()
 
 // 托盘右键菜单
 main.tray.setContextMenu([

@@ -562,7 +562,7 @@ if (1) {
     let a = document.getElementById("openProjectA")
     if (a) {
         a.onclick = () => {
-            renderer.shell.openUrl({ "url": "https://gitee.com/linuxmail/node-ddk-demo" })
+            renderer.shell.openUrl({ "url": "https://github.com/mailhonor/node-ddk-demo" })
         }
     }
     a = document.getElementById("openDevA")
