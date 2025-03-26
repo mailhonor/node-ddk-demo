@@ -73,7 +73,6 @@ main.menu.setMenuByWindowType("menu_test123", [
     mdir = "../dist/icons"
   }
   main.tray.setDefaultImage(main.app.getPathInPublic("icons/favicon.png"))
-  main.tray.setBlankImage(main.app.getPathInPublic("icons/favicon_blank.png"))
 }
 // 托盘点击
 main.tray.setShowHideSwitchMainWindowOnClick()
